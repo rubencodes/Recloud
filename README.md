@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/recloud.svg)](https://badge.fury.io/js/recloud)
 
-Mixin that listens to prop/state changes and only reloads data from the server when necessary. Branch from the Parse-specific [React-Cloud-Code-Mixin](https://github.com/rubencodes/react-cloud-code-mixin) to be able to load data from any endpoint. Inspired by [ParseReact's Mixin](https://github.com/ParsePlatform/ParseReact/blob/master/docs/api/Mixin.md) and [Reselect](https://github.com/reactjs/reselect).
+Mixin that listens to prop/state changes and only reloads data from the server when necessary. Basically, Reselect but for loading data from the cloud. Branch from the Parse-specific [React-Cloud-Code-Mixin](https://github.com/rubencodes/react-cloud-code-mixin) to be able to load data from any endpoint. Inspired by [ParseReact's Mixin](https://github.com/ParsePlatform/ParseReact/blob/master/docs/api/Mixin.md) and [Reselect](https://github.com/reactjs/reselect).
 
 
 ## How to Use
@@ -42,7 +42,7 @@ var MyComponent = React.createClass({
   }
 });
 ```
-Whenever the component mounts, it will issue a call to my `loadData` API and the results will be stored in `this.data.MyData`. Any time props or state change, the function will be called again (unless otherwise configured—details below).
+Whenever the component mounts, it will issue a call to my `loadData` API and the results will be stored in `this.data.MyData`. Any time props or state change, the function will be called again (unless otherwise configured—details below). **Note: the `load` function must return a Promise.**
 
 The objects associated with the data keys can take the following parameters:
 
