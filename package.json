@@ -1,6 +1,6 @@
 {
   "name": "recloud",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "./lib/index",
   "description": "A mixin for React.js to pull cloud data on props/state change.",
   "dependencies": {
