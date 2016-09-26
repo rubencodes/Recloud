@@ -80,14 +80,14 @@ In the example, the `getUsers` API is called with the parameter `age` set to `pr
 
 The `propDeps` and `stateDeps` declarations are the biggest departure from the ParseReact mixin; ParseReact reloads in response to any prop or state change. To get this behavior, simply omit the `propDeps` and `statedDeps` keys. This will force a reload with any prop or state change. If you don't want to ever reload data in response to props or state, this can also be specified by defining `propDeps` and `stateDeps` to be empty arrays.
 
-*Array and Object values not yet supported for `propDeps` and `stateDeps` 
+*Array and Object values not yet supported for `propDeps` and `stateDeps`
 
 ## Additional Component Methods
-###`this.pendingQueries()` 
+###`this.pendingQueries()`
 Returns an array containing the names of calls that are currently waiting for results.
-###`this.queryErrors()` 
+###`this.queryErrors()`
 Returns a map of call names to the error they encountered on the last request, if there was one.
-###`this.reloadData([callList])` 
+###`this.reloadData([callList])`
 Forces a refresh of Cloud Code calls with names in the `callList`, if provided, else refreshes data from all the calls. Note: the names in the `callList` should be the name of the data key in which the data is stored (e.g. the key part of the key-value pairs returned in `loadData`.
 
 ## Install
@@ -108,7 +108,7 @@ import Recloud from 'recloud'
 ```
 
 ## Depencies
-None! Well, except Parse. But that's a given.
+None!
 
 ## F.A.Q.
 **Does this replace ParseReact Mixin?**
