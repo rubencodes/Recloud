@@ -42,7 +42,7 @@ var MyComponent = React.createClass({
   }
 });
 ```
-Whenever the component mounts, it will issue a call to my `loadData` API and the results will be stored in `this.data.MyData`. Any time props or state change, the function will be called again (unless otherwise configured—details below). **Note: the `load` function must return a Promise.**
+In this example, whenever the component mounts, it will issue a call to the `MyAPI.loadData` endpoint and the results from that call will be stored in `this.data.MyData`. Any time props or state change, the function will be called again (unless otherwise configured—details below). **Note: the `load` function must return a Promise.**
 
 The objects associated with the data keys can take the following parameters:
 
@@ -76,7 +76,7 @@ var MyComponent = React.createClass({
 });
 ```
 
-In the example, the `getUsers` API is called with the parameter `age` set to `props.userAge`, and resulting data is stored in `this.data.Users`. Our `propDeps` specify that any time that `this.props.userAge` changes, the data is pulled again from the server and the component is reloaded. If this prop has not changed, nothing is reloaded.
+In the example, the `MyAPI.getUsers` endpoint is called with the parameter `age` set to `props.userAge`, and resulting data is stored in `this.data.Users`. Our `propDeps` specify that any time the `userAge` prop changes in value, the data is pulled again from the server and the component is reloaded. If this prop has not changed, nothing is reloaded.
 
 The `propDeps` and `stateDeps` declarations are the biggest departure from the ParseReact mixin; ParseReact reloads in response to any prop or state change. To get this behavior, simply omit the `propDeps` and `statedDeps` keys. This will force a reload with any prop or state change. If you don't want to ever reload data in response to props or state, this can also be specified by defining `propDeps` and `stateDeps` to be empty arrays.
 
